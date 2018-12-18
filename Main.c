@@ -33,7 +33,7 @@ int main () {
 	}
 	printf("Opening file %s\n", file_name);
 	FILE *f;
-	f = fopen(file_name, "r"); // find the return for this statement to then put in an if/else block
+	f = fopen(file_name, "r");
 	if (f == NULL) {
 		puts("Error. Exiting program!");
 		exit(1);
