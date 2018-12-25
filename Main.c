@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+
 
 struct character_stats {
 	char l;
@@ -45,12 +47,13 @@ int main () {
 	char ch;
 	while (ch != EOF) {
 		ch = fgetc(f);
+		if (isupper(ch)) {
+				ch = tolower(ch);
+		}
 		for (int i = 0; i < 26;  i++) {
 			if (ch == list[i].l) {
 				list[i].count++;
 				total_chars++;
-			} else {
-				continue;
 			}
 		}
 	}
