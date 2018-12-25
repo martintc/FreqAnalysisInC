@@ -2,16 +2,25 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+/*
+ * Data Structure
+ * Character and Count
+ */
 
 struct character_stats {
 	char l;
 	long count;
 };
 
-
+/*
+ * Declaring functions
+ */
 int create_data_structure();
 float calc_percent(long char_num, long total_chars);
 
+/*
+ * Main function
+ */
 int main () {
 
 	char file_name[180];
@@ -70,6 +79,12 @@ int main () {
 	return 0;
 }
 
+/*
+ * create_data_structure(char charsList[], struct data_structure)
+ * Creates an array using the data structure
+ * Each symbol from chars is placed into a data structure from above
+ * Count is automatically initialized to 0
+ */
 int create_data_structure (char chars[], struct character_stats list[]) {
 	for (int i = 0; i < 26; i++) {
 		list[i].l = chars[i];
@@ -80,6 +95,11 @@ int create_data_structure (char chars[], struct character_stats list[]) {
 	return 0;
 }
 
+/*
+ * calc_percent (long char_number, long total_chars)
+ * calculates the percentage of a character's presence in a file
+ * compared to the rest of the document
+ */
 float calc_percent (long char_num, long total_chars) {
 	return (float) char_num / total_chars;
 }
